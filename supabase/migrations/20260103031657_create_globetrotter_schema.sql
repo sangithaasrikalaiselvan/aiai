@@ -96,6 +96,9 @@
   - Cities and activities are readable by all authenticated users
 */
 
+-- Required for gen_random_uuid()
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
 -- Create profiles table
 CREATE TABLE IF NOT EXISTS profiles (
   id uuid PRIMARY KEY REFERENCES auth.users ON DELETE CASCADE,
